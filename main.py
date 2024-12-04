@@ -7,13 +7,14 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome()
 
 # Open Google
-driver.get("https://www.google.com")
+driver.get("https://trytestingthis.netlify.app/index.html")
+driver.find_element(By.NAME, "fname").send_keys("Sudhir")
+driver.find_element(By.NAME, "lname").send_keys("Mahaaraja")
 
-# Find the search bar and enter a query
-search_box = driver.find_element(By.NAME, "q")
-#search_box.send_keys("Selenium Python")
-search_box.send_keys(Keys.RETURN)
+time.sleep(5)
 
-time.sleep(52)
+driver.find_element(By.XPATH,"//button[@class='btn btn-success']").click()
+
+time.sleep(5)
 # Close the browser
 driver.quit()
